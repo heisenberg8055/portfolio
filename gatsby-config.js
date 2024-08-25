@@ -2,12 +2,12 @@ const config = require('./src/config');
 
 module.exports = {
   siteMetadata: {
-    title: 'Brittany Chiang',
+    title: 'Yeswanth Inturi',
     description:
-      'Brittany Chiang is a software engineer who specializes in building (and occasionally designing) exceptional digital experiences.',
-    siteUrl: 'https://brittanychiang.com', // No trailing slash allowed!
-    image: '/og.png', // Path to your image you placed in the 'static' folder
-    twitterUsername: '@bchiang7',
+      'Yeswanth Sai Inturi, A backend & web app developer, who loves exploring and building new stuff from the web.',
+    siteUrl: 'https://yeswanth.com', // No trailing slash allowed!
+    image: '/og@3x.png', // Path to your image you placed in the 'static' folder
+    twitterUsername: '@yeswanthinturi',
   },
   plugins: [
     `gatsby-plugin-react-helmet`,
@@ -20,13 +20,13 @@ module.exports = {
     {
       resolve: `gatsby-plugin-manifest`,
       options: {
-        name: 'Brittany Chiang',
-        short_name: 'Brittany Chiang',
+        name: 'Yeswanth Inturi',
+        short_name: 'Yeswanth Inturi',
         start_url: '/',
         background_color: config.colors.darkNavy,
         theme_color: config.colors.navy,
         display: 'minimal-ui',
-        icon: 'src/images/logo.png',
+        icon: 'src/images/brba.png',
       },
     },
     `gatsby-plugin-offline`,

@@ -1,7 +1,7 @@
 ---
 date: '2016-05-15'
 title: 'Secondary Education'
-company: 'KKR Gowtham High School'
+school: 'KKR Gowtham High School'
 location: 'Guntur, IND'
 range: 'August 2015 - May 2016'
 url: 'https://kkrgowtham.com/'

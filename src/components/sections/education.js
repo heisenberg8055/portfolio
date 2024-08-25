@@ -7,7 +7,7 @@ import { KEY_CODES } from '@utils';
 import sr from '@utils/sr';
 import { usePrefersReducedMotion } from '@hooks';
 
-const StyledJobsSection = styled.section`
+const StyledEducationSection = styled.section`
   max-width: 700px;
 
   .inner {
@@ -151,7 +151,7 @@ const StyledTabPanel = styled.div`
     font-weight: 500;
     line-height: 1.3;
 
-    .company {
+    .school {
       color: var(--green);
     }
   }
@@ -162,12 +162,19 @@ const StyledTabPanel = styled.div`
     font-family: var(--font-mono);
     font-size: var(--fz-xs);
   }
+
+  .location {
+    margin-bottom: 25px;
+    color: var(--dark-slate);
+    font-family: var(--font-mono);
+    font-size: var(--fz-xs);
+  }
 `;
 
-const Jobs = () => {
+const Education = () => {
   const data = useStaticQuery(graphql`
     query {
-      jobs: allMarkdownRemark(
+      education: allMarkdownRemark(
         filter: { fileAbsolutePath: { regex: "/content/education/" } }
         sort: { fields: [frontmatter___date], order: DESC }
       ) {
@@ -175,7 +182,7 @@ const Jobs = () => {
           node {
             frontmatter {
               title
-              company
+              school
               location
               range
               url
@@ -187,7 +194,7 @@ const Jobs = () => {
     }
   `);
 
-  const jobsData = data.jobs.edges;
+  const educationData = data.education.edges;
 
   const [activeTabId, setActiveTabId] = useState(0);
   const [tabFocus, setTabFocus] = useState(null);
@@ -243,14 +250,14 @@ const Jobs = () => {
   };
 
   return (
-    <StyledJobsSection id="jobs" ref={revealContainer}>
+    <StyledEducationSection id="education" ref={revealContainer}>
       <h2 className="numbered-heading">Where I’ve Studied</h2>
 
       <div className="inner">
-        <StyledTabList role="tablist" aria-label="Job tabs" onKeyDown={e => onKeyDown(e)}>
-          {jobsData &&
-            jobsData.map(({ node }, i) => {
-              const { company } = node.frontmatter;
+        <StyledTabList role="tablist" aria-label="Education tabs" onKeyDown={e => onKeyDown(e)}>
+          {educationData &&
+            educationData.map(({ node }, i) => {
+              const { school } = node.frontmatter;
               return (
                 <StyledTabButton
                   key={i}
@@ -262,7 +269,7 @@ const Jobs = () => {
                   tabIndex={activeTabId === i ? '0' : '-1'}
                   aria-selected={activeTabId === i ? true : false}
                   aria-controls={`panel-${i}`}>
-                  <span>{company}</span>
+                  <span>{school}</span>
                 </StyledTabButton>
               );
             })}
@@ -270,10 +277,10 @@ const Jobs = () => {
         </StyledTabList>
 
         <StyledTabPanels>
-          {jobsData &&
-            jobsData.map(({ node }, i) => {
+          {educationData &&
+            educationData.map(({ node }, i) => {
               const { frontmatter, html } = node;
-              const { title, url, company, range, location } = frontmatter;
+              const { title, url, school, range, location } = frontmatter;
 
               return (
                 <CSSTransition key={i} in={activeTabId === i} timeout={250} classNames="fade">
@@ -283,19 +290,19 @@ const Jobs = () => {
                     tabIndex={activeTabId === i ? '0' : '-1'}
                     aria-labelledby={`tab-${i}`}
                     aria-hidden={activeTabId !== i}
-                    hiddWorkeden={activeTabId !== i}>
+                    hidden={activeTabId !== i}>
                     <h3>
                       <span>{title}</span>
-                      <span className="company">
+                      <span className="school">
                         &nbsp;@&nbsp;
                         <a href={url} className="inline-link">
-                          {company}
+                          {school}
                         </a>
                       </span>
                     </h3>
-
+                    <p className="location">{location}</p>
                     <p className="range">{range}</p>
-                    <p className="range">{location}</p>
+
                     <div dangerouslySetInnerHTML={{ __html: html }} />
                   </StyledTabPanel>
                 </CSSTransition>
@@ -303,8 +310,8 @@ const Jobs = () => {
             })}
         </StyledTabPanels>
       </div>
-    </StyledJobsSection>
+    </StyledEducationSection>
   );
 };
 
-export default Jobs;
+export default Education;

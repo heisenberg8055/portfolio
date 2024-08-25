@@ -1,7 +1,7 @@
 ---
 date: '2023-05-16'
 title: 'Bachelor Of Technology'
-company: 'Aditya College Of Enginnering'
+school: 'Aditya College Of Enginnering'
 location: 'Kakinada, IND'
 range: 'August 2019 - May 2023'
 url: 'https://www.acoe.edu.in/'

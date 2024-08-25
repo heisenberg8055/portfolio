@@ -37,7 +37,8 @@ const StyledHeroSection = styled.section`
 
   p {
     margin: 20px 0 0;
-    max-width: 540px;
+    max-width: 650px;
+    line-height: 2.1;
   }
 
   .email-link {
@@ -65,9 +66,21 @@ const Hero = () => {
   const four = (
     <>
       <p>
-        I’m a software engineer specializing in building (and occasionally designing) exceptional
-        digital experiences and love coding (CP). Currently, I’m focused on building accessible,
-        human-centered products at{' '}
+        I'm a{' '}
+        <a href="https://github.com/heisenberg8055" target="_blank" rel="noreferrer">
+          developer{' '}
+        </a>{' '}
+        and a passionate{' '}
+        <a href="https://leetcode.com/u/heisenberg8055" target="_blank" rel="noreferrer">
+          Coder.
+        </a>
+        <br></br>I often read Techblogs,{' '}
+        <span role="img" aria-label="Gaming">
+          🎮
+        </span>{' '}
+        or mess around with Linux Distros, RICEing them.
+        <br></br>
+        Works as Member Technical at{' '}
         <a href="https://adp.com/" target="_blank" rel="noreferrer">
           ADP
         </a>
@@ -78,10 +91,10 @@ const Hero = () => {
   const five = (
     <a
       className="email-link"
-      href="https://leetcode.com/u/heisenberg8055/"
+      href="mailto:yeswanthsai.inturi@gmail.com"
       target="_blank"
       rel="noreferrer">
-      Check out my Leetcode!
+      Hire Me
     </a>
   );
 
