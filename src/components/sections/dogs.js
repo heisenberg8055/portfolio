@@ -35,6 +35,11 @@ const StyledDogsSection = styled.section`
     font-size: clamp(40px, 5vw, 60px);
   }
 
+  img {
+    object-fit: contain;
+    loading: lazy;
+  }
+
   .email-link {
     ${({ theme }) => theme.mixins.bigButton};
     margin-top: 50px;
@@ -42,7 +47,7 @@ const StyledDogsSection = styled.section`
 `;
 
 const Dogs = () => {
-  const [imageUrl, setImageUrl] = useState('');
+  const [imageUrl, setImageUrl] = useState('../../images/me.jpg');
   const revealContainer = useRef(null);
   const prefersReducedMotion = usePrefersReducedMotion();
 
@@ -195,7 +200,7 @@ const Dogs = () => {
     const subBreed = randomSubBreed(breed);
     let url = `https://dog.ceo/api/breed/${breed}/`;
     if (subBreed.length > 0) {
-      url += `${subBreed  }/`;
+      url += `${subBreed}/`;
     }
     url += 'images/random';
     try {
@@ -217,6 +222,10 @@ const Dogs = () => {
     sr.reveal(revealContainer.current, srConfig());
   }, []);
 
+  useEffect(() => {
+    handleDogImage();
+  }, []);
+
   return (
     <StyledDogsSection id="dogs" ref={revealContainer}>
       <h2 className="numbered-heading overline">
@@ -233,7 +242,7 @@ const Dogs = () => {
         </span>
       </h2>
       <div>
-        <img src={imageUrl} alt="Dog"></img>
+        <img src={imageUrl} alt="Dog" width={500} height={500}></img>
       </div>
       <button className="email-link" onClick={() => handleDogImage()}>
         Show me
