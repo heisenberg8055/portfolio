@@ -156,7 +156,7 @@ const About = () => {
               <a href="https://blog.lifion.com/">Lifion</a> Team working with{' '}
               <a href="https://go.dev/">Golang</a>.
             </p>
-            <p>Here are a few technologies i love working on:</p>
+            <p>Here are a few technologies i love working with:</p>
           </div>
 
           <ul className="skills-list">
