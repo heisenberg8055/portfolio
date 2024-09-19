@@ -1,8 +1,6 @@
 ---
 date: '2024-05-01'
 title: 'Microsoft Entra Integration'
-github: ''
-external: ''
 tech:
   - Golang
   - ADP Lifion

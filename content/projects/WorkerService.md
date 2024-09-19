@@ -1,8 +1,6 @@
 ---
 date: '2024-02-01'
 title: 'Worker Service Integration'
-github: ''
-external: ''
 tech:
   - Golang
   - JavaScript

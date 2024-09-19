@@ -1,8 +1,6 @@
 ---
 date: '2022-08-01'
 title: 'Document Parser'
-github: ''
-external: ''
 tech:
   - Java
   - Apache POI

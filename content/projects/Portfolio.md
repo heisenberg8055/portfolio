@@ -12,4 +12,4 @@ company: Personal
 showInProjects: true
 ---
 
-A Personal portfolio website forked from [Brittany Chang]('https://github.com/bchiang7/v4') and modified features.
+A Personal portfolio website made with Gatsby
