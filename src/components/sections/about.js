@@ -153,8 +153,8 @@ const About = () => {
                 ADP
               </a>{' '}
               - A HCM and Payroll company, where I'm a part of ADP's NextGen HCM{' '}
-              <a href="https://blog.lifion.com/">Lifion</a> Team working with{' '}
-              <a href="https://go.dev/">Golang</a>.
+              <a href="https://www.adp.com/what-we-offer/products/lyric.aspx">Lyric</a> Team working
+              with <a href="https://go.dev/">Golang</a>.
             </p>
             <p>Here are a few technologies i love working with:</p>
           </div>

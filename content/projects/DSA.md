@@ -1,6 +1,6 @@
 ---
 date: '2023-01-20'
-title: 'Leetcode Solutions with notes'
+title: 'Various algorithms and their implementations.'
 github: 'https://github.com/heisenberg8055/DSA'
 external: 'https://leetcode.com/u/heisenberg8055'
 tech:
@@ -13,4 +13,4 @@ company: 'Personal'
 showInProjects: false
 ---
 
-Storing various leetcode solutions daily from my clg days to present mostly in c++.
+This Repo mostly contains various algorithms and their implementations and leetcode solutions.
