@@ -127,12 +127,12 @@ const About = () => {
 
   const skills = [
     'Golang',
+    'AI Engineering',
     'Java',
     'C++',
-    'JavaScript (ES6+)',
     'Python',
     'React',
-    'Node.js',
+    'LangGraph',
     'SQL',
     'MongoDB',
     'GraphQL',
@@ -146,17 +146,17 @@ const About = () => {
         <StyledText>
           <div>
             <p>
-              Hello! My name is Yeswanth Inturi. A backend &amp; web app developer, who loves
-              exploring and building new stuff from the web.<br></br>
+              Hello! My name is Yeswanth Inturi. A backend &amp; an AI engineer who loves exploring
+              and building new stuff.<br></br>
               I'm currently working as a Member Technical at{' '}
               <a href="https://adp.com/" target="_blank" rel="noreferrer">
                 ADP
               </a>{' '}
-              - A HCM and Payroll company, where I'm a part of ADP's NextGen HCM{' '}
+              (Payroll &amp; HR Systems), where I'm a part of ADP's NextGen HCM{' '}
               <a href="https://www.adp.com/what-we-offer/products/lyric.aspx">Lyric</a> Team working
-              with <a href="https://go.dev/">Golang</a>.
+              with <a href="https://go.dev/">Golang</a> &amp; building AI Agents.
             </p>
-            <p>Here are a few technologies i love working with:</p>
+            <p>Here are a few technologies I have experience working with:</p>
           </div>
 
           <ul className="skills-list">

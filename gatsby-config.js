@@ -7,7 +7,13 @@ module.exports = {
       'Yeswanth Sai Inturi, A backend & web app developer, who loves exploring and building new stuff from the web.',
     siteUrl: 'https://yeswanth.com', // No trailing slash allowed!
     image: '/og@3x.png', // Path to your image you placed in the 'static' folder
-    twitterUsername: '@yeswanthinturi',
+    twitterUsername: '@heisenberg8055',
+    author: 'Yeswanth Sai Inturi',
+    social: {
+      twitter: 'https://twitter.com/heisenberg8055',
+      github: 'https://github.com/heisenberg8055',
+      linkedin: 'https://linkedin.com/in/yeswanthsi',
+    },
   },
   plugins: [
     `gatsby-plugin-react-helmet`,
@@ -15,8 +21,57 @@ module.exports = {
     `gatsby-plugin-image`,
     `gatsby-plugin-sharp`,
     `gatsby-transformer-sharp`,
-    `gatsby-plugin-sitemap`,
-    `gatsby-plugin-robots-txt`,
+    {
+      resolve: `gatsby-plugin-sitemap`,
+      options: {
+        output: `/sitemap.xml`,
+        query: `
+          {
+            site {
+              siteMetadata {
+                siteUrl
+              }
+            }
+            allSitePage {
+              nodes {
+                path
+              }
+            }
+          }
+        `,
+        resolveSiteUrl: () => 'https://yeswanth.com',
+        resolvePages: pages => pages.allSitePage.nodes.map(page => ({ ...page })),
+        filterPages: page => {
+          // Exclude 404 pages or drafts
+          if (page.path.match(/^\/404/)) {
+            return false;
+          }
+          if (page.path.match(/^\/dev-404-page/)) {
+            return false;
+          }
+          return true;
+        },
+        serialize: ({ path }) => ({
+          url: path,
+          changefreq: path === '/' ? 'weekly' : 'monthly',
+          priority: path === '/' ? 1.0 : 0.7,
+        }),
+      },
+    },
+    {
+      resolve: `gatsby-plugin-robots-txt`,
+      options: {
+        host: 'https://yeswanth.com',
+        sitemap: 'https://yeswanth.com/sitemap.xml',
+        policy: [
+          {
+            userAgent: '*',
+            allow: '/',
+            disallow: ['/404', '/dev-404-page'],
+          },
+        ],
+      },
+    },
     {
       resolve: `gatsby-plugin-manifest`,
       options: {

@@ -70,9 +70,9 @@ const Hero = () => {
         <a href="https://github.com/heisenberg8055" target="_blank" rel="noreferrer">
           developer{' '}
         </a>{' '}
-        and a passionate{' '}
+        with a strong passion for{' '}
         <a href="https://leetcode.com/u/heisenberg8055" target="_blank" rel="noreferrer">
-          Coder.
+          Coding.
         </a>
         <br></br>I often read Techblogs,{' '}
         <span role="img" aria-label="Gaming">
@@ -80,7 +80,9 @@ const Hero = () => {
         </span>{' '}
         or mess around with Linux Distros, RICEing them.
         <br></br>
-        Works as Member Technical at{' '}
+        Currently, most of my time is dedicated to AI Engineering.
+        <br></br>
+        Works as a Member Technical at{' '}
         <a href="https://adp.com/" target="_blank" rel="noreferrer">
           ADP
         </a>

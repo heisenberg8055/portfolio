@@ -1,10 +1,8 @@
 import React from 'react';
 import { graphql, Link } from 'gatsby';
-import kebabCase from 'lodash/kebabCase';
 import PropTypes from 'prop-types';
-import { Helmet } from 'react-helmet';
 import styled from 'styled-components';
-import { Layout } from '@components';
+import { Layout, Head } from '@components';
 
 const StyledPostContainer = styled.main`
   max-width: 1000px;
@@ -52,11 +50,17 @@ const StyledPostContent = styled.div`
 
 const PostTemplate = ({ data, location }) => {
   const { frontmatter, html } = data.markdownRemark;
-  const { title, date, tags } = frontmatter;
+  const { title, description, date } = frontmatter;
 
   return (
     <Layout location={location}>
-      <Helmet title={title} />
+      <Head
+        title={title}
+        description={description || title}
+        isArticle={true}
+        datePublished={new Date(date).toISOString()}
+        dateModified={new Date(date).toISOString()}
+      />
 
       <StyledPostContainer>
         <span className="breadcrumb">
@@ -67,21 +71,13 @@ const PostTemplate = ({ data, location }) => {
         <StyledPostHeader>
           <h1 className="medium-heading">{title}</h1>
           <p className="subtitle">
-            <time>
+            <time dateTime={new Date(date).toISOString()}>
               {new Date(date).toLocaleDateString('en-US', {
                 year: 'numeric',
                 month: 'long',
                 day: 'numeric',
               })}
             </time>
-            <span>&nbsp;&mdash;&nbsp;</span>
-            {tags &&
-              tags.length > 0 &&
-              tags.map((tag, i) => (
-                <Link key={i} to={`/pensieve/tags/${kebabCase(tag)}/`} className="tag">
-                  #{tag}
-                </Link>
-              ))}
           </p>
         </StyledPostHeader>
 
